@@ -83,7 +83,7 @@ class MainWindow(QMainWindow, QScrollArea):
         pixmap = QPixmap(image_path)
 
         scaled_pixmap_top = pixmap.scaled(self.top_image.contentsRect().width(), self.top_image.contentsRect().height(),
-                                          Qt.AspectRatioMode.KeepAspectRatio)
+                                          Qt.AspectRatioMode.IgnoreAspectRatio)
 
         image_path_ndarray = cv.imread(image_path)
 
@@ -94,7 +94,7 @@ class MainWindow(QMainWindow, QScrollArea):
 
         scaled_pixmap2_bottom = pixmap2.scaled(self.bottom_image.contentsRect().width(),
                                                self.bottom_image.contentsRect().height(),
-                                               Qt.AspectRatioMode.KeepAspectRatio)
+                                               Qt.AspectRatioMode.IgnoreAspectRatio)
 
         self.top_image.setPixmap(scaled_pixmap_top)
         self.bottom_image.setPixmap(scaled_pixmap2_bottom)
